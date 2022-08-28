@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,700&family=Montserrat:wght@400;700&family=Outfit:wght@300;400;600;700&family=Poppins:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-tarjeta-NY: hsl(0, 2%, 21%);
+  --color-texto-NY: hsl(0, 4%, 61%);
+  --color-tarjeta-BN: hsl(0, 72%, 33%);
+  --color-texto-BN: hsl(0, 96%, 72%);
+  --color-fondo: hsl(0, 3%, 76%);
+  --color-nombres: #fff;
+  --color-sombra-NY: hsl(184, 100%, 50%);
+  --color-sombra-BN: hsl(49, 100%, 51%);
+  --sombra: 0 0 15px 3px;
+  --espaciado: 1em;
+}
+
+body {
+  background: var(--color-fondo);
+  Color: var(--color-nombres);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.seccion {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cabecera {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 7%;
+}
+
+.cabecera .logo {
+  width: 3em;
+  height: 3em;
+  margin-right: var(--espaciado);
+  object-fit: cover;
+}
+
+.titulo-seccion {
+  width: fit-content;
+  margin: 15px 0;
+  font-size: 40px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.seccion-yankees .titulo-seccion {
+  color: var(--color-tarjeta-NY);
+}
+
+.seccion-boston .titulo-seccion {
+  color: var(--color-tarjeta-BN);
+}
+
+.tarjeta {
+  margin: var(--espaciado);
+  padding: var(--espaciado);
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  transition: .3s;
+  text-align: center;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta a {
+  padding: calc(var(--espaciado) / 2) var(--espaciado);
+}
+
+.tarjeta:hover a {
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.yankees {
+  color: var(--color-sombra-NY);
+}
+
+.yankees a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.yankees {
+  background: var(--color-tarjeta-NY);
+}
+
+.yankees:hover,
+.yankees:hover img {
+  box-shadow: var(--sombra);
+}
+
+.yankees:hover .nombre,
+.yankees:hover a {
+  color: hsl(180, 100%, 50%)
+}
+
+.boston {
+  background: var(--color-tarjeta-BN);
+  color: var(--color-sombra-BN);
+}
+
+.boston a {
+  color: inherit;
+}
+
+.boston:hover,
+.boston:hover img {
+  box-shadow: var(--sombra);
+}
+
+.boston:hover .nombre {
+  color: var(--color-sombra-BN);
+}
+
+
+.tarjeta img {
+  width: 180px;
+  object-fit: cover;
+  height: 180px;
+  border-radius: 50%;
+  background: hsl(192, 45%, 47%);
+}
+
+.nombre {
+  color: var(--color-nombres);
+}
+
+.parrafo {
+  font-family: 'Outfit', sans-serif;
+}
+
+.yankees .parrafo {
+  color: var(--color-texto-NY);
+}
+
+.boston .parrafo {
+  color: var(--color-texto-BN);
+}
+
+.tarjeta a {
+  transition: .3s;
+}
+
+.tarjeta a:hover {
+  box-shadow: var(--sombra);
+  transform: scale(1.1);
+}
+
+.yankees a:active {
+  background: hsl(0, 3%, 12%);
+}
+
+.boston a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.boston a:active {
+  background: hsl(0, 76%, 20%);
+}
+
+@media screen and (max-width: 450px) {
+  .titulo-seccion {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .seccion-yankees {
+    padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: 358px) {
+  .seccion-boston {
+    padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .tarjeta {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .tarjeta {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .tarjeta img {
+    width: 9em;
+    height: 9em;
+  }
+
+  .nombre {
+    font-size: 1.3em;
+  }
+
+  .parrafo {
+    font-size: 11pt;
+  }
+}
